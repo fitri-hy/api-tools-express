@@ -1,5 +1,22 @@
 {
+  "name": "hytechproject",
+  "version": "1.0.0",
+  "description": " Fire equipment server uses Express JS ",
+  "main": "index.js",
+  "scripts": {
+	"start": "vercel dev",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
   "dependencies": {
     "api-tools-express": "^1.0.1"
-  }
+  },
+  "author": "HyTech Group",
+  "license": "MIT",
+  "keywords": [
+    "vercel",
+	"api",
+	"tools"
+  ],
+  "author": "",
+  "license": "ISC"
 }
