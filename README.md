@@ -2,6 +2,8 @@
 
 Fire equipment server uses Express JS
 
+<img src="./Screenshot.png" />
+
 ## Installation
 ```sh
 https://github.com/fitri-hy/api-tools-express.git
