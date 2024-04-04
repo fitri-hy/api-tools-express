@@ -1,5 +1,5 @@
 {
-  "name": "hytechproject",
+  "name": "api-tools-express ",
   "version": "1.0.0",
   "description": " Fire equipment server uses Express JS ",
   "main": "index.js",
