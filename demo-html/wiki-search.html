@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Multi-language Search Form</title>
+<link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+<div class="max-w-xl mx-auto bg-white p-4 rounded-lg shadow-md">
+  <h2 class="text-2xl font-bold mb-4">Search Wikipedia</h2>
+  <form id="searchForm" class="flex items-center gap-4">
+    <input type="text" id="searchTerm" placeholder="Enter search term" class="p-2 border border-gray-300 rounded-md flex-1">
+    <select id="langSelect" class="p-2 border border-gray-300 rounded-md">
+      <option value="id">Indonesia</option>
+      <option value="en">English</option>
+      <option value="de">German</option>
+      <option value="fr">French</option>
+      <!-- Tambahkan pilihan bahasa lain sesuai kebutuhan -->
+    </select>
+    <button type="submit" class="bg-blue-500 text-white px-4 py-2 rounded-md">Search</button>
+  </form>
+
+  <div id="searchResults" class="mt-4"></div>
+</div>
+
+<script>
+document.getElementById('searchForm').addEventListener('submit', async function(event) {
+  event.preventDefault();
+  
+  const searchTerm = document.getElementById('searchTerm').value;
+  const lang = document.getElementById('langSelect').value;
+  
+  try {
+    const response = await fetch(`http://localhost:5000/wiki/${searchTerm}/${lang}`);
+    const data = await response.json();
+	
+    const thumbnail = data.thumbnail.source;
+    const title = data.title;
+    const extract = data.extract;
+    
+    const resultHtml = `
+	  <img class="m-auto rounded" src="${thumbnail}"/>
+      <h3 class="text-lg font-bold mb-2 mt-4">${title}</h3>
+      <p class="text-gray-700">${extract}</p>
+    `;
+    
+    document.getElementById('searchResults').innerHTML = resultHtml;
+  } catch (error) {
+    console.error(error);
+    document.getElementById('searchResults').innerHTML = 'An error occurred while fetching data.';
+  }
+});
+</script>
+</body>
+</html>

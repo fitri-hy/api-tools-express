@@ -1,0 +1,256 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>Penerjemah</title>
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 font-sans">
+  <div class="container mx-auto px-4 py-8">
+    <h1 class="text-3xl font-bold text-center mb-8">Penerjemah</h1>
+    <form class="flex flex-col space-y-4">
+      <div class="flex flex-col">
+        <label for="text" class="w-1/4 text-left mr-4">Teks:</label>
+        <textarea id="text" class="w-full h-40 px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500"></textarea>
+      </div>
+	  <div class="flex justify-between w-full">
+		  <div class="flex gap-4">
+			  <div class="flex flex-col">
+				<label for="from" class="w-1/4 text-left mr-4">Dari:</label>
+				<select id="from" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500">
+<option value="af">Afrikaans</option>
+<option value="sq">Albania</option>
+<option value="am">Amharic</option>
+<option value="ar">Arab</option>
+<option value="ar-DZ">Arab (Algeria)</option>
+<option value="ar-BH">Arab (Bahrain)</option>
+<option value="ar-EG">Arab (Mesir)</option>
+<option value="ar-IQ">Arab (Irak)</option>
+<option value="ar-JO">Arab (Yordania)</option>
+<option value="ar-KW">Arab (Kuwait)</option>
+<option value="ar-LB">Arab (Lebanon)</option>
+<option value="ar-LY">Arab (Libya)</option>
+<option value="ar-MA">Arab (Maroko)</option>
+<option value="ar-OM">Arab (Oman)</option>
+<option value="ar-QA">Arab (Qatar)</option>
+<option value="ar-SA">Arab (Saudi Arabia)</option>
+<option value="ar-SY">Arab (Suriah)</option>
+<option value="ar-TN">Arab (Tunisia)</option>
+<option value="ar-AE">Arab (Uni Emirat Arab)</option>
+<option value="hy">Armenia</option>
+<option value="az">Azerbaijan</option>
+<option value="eu">Basque</option>
+<option value="bn">Bengali</option>
+<option value="bg">Bulgaria</option>
+<option value="ca">Catalan</option>
+<option value="ceb">Cebuano</option>
+<option value="zh-CN">Cina (Sederhana)</option>
+<option value="zh-HK">Cina (Hong Kong)</option>
+<option value="zh-MO">Cina (Makau)</option>
+<option value="zh-TW">Cina (Tradisional)</option>
+<option value="hr">Kroasia</option>
+<option value="cs">Ceko</option>
+<option value="da">Denmark</option>
+<option value="nl">Belanda</option>
+<option value="en">Inggris</option>
+<option value="en-AU">Inggris (Australia)</option>
+<option value="en-CA">Inggris (Kanada)</option>
+<option value="en-GB">Inggris (Inggris Raya)</option>
+<option value="en-IN">Inggris (India)</option>
+<option value="en-IE">Inggris (Irlandia)</option>
+<option value="en-NZ">Inggris (Selandia Baru)</option>
+<option value="en-PH">Inggris (Filipina)</option>
+<option value="en-SG">Inggris (Singapura)</option>
+<option value="en-ZA">Inggris (Afrika Selatan)</option>
+<option value="et">Estonia</option>
+<option value="fi">Finlandia</option>
+<option value="fr">Prancis</option>
+<option value="fr-CA">Prancis (Kanada)</option>
+<option value="gl">Galicia</option>
+<option value="ka">Georgia</option>
+<option value="de">Jerman</option>
+<option value="de-AT">Jerman (Austria)</option>
+<option value="de-CH">Jerman (Swiss)</option>
+<option value="el">Yunani</option>
+<option value="gu">Gujarati</option>
+<option value="ht">Haiti Creole</option>
+<option value="ha">Hausa</option>
+<option value="he">Ibrani</option>
+<option value="hi">Hindi</option>
+<option value="hu">Hungaria</option>
+<option value="is">Islandia</option>
+<option value="ig">Igbo</option>
+<option value="id">Indonesia</option>
+<option value="ga">Irlandia</option>
+<option value="it">Italia</option>
+<option value="it-CH">Italia (Swiss)</option>
+<option value="ja">Jepang</option>
+<option value="ja-JP">Jepang (Jepang)</option>
+<option value="kn">Kannada</option>
+<option value="kk">Kazakh</option>
+<option value="km">Khmer</option>
+<option value="ko">Korea</option>
+<option value="ko-KR">Korea (Korea Selatan)</option>
+<option value="es">Spanyol</option>
+<option value="ms">Melayu</option>
+<option value="pl">Polandia</option>
+<option value="pt">Portugis</option>
+<option value="pt-BR">Portugis (Brasil)</option>
+<option value="pt-PT">Portugis (Portugal)</option>
+<option value="ro">Rumania</option>
+<option value="ru">Rusia</option>
+<option value="sk">Slovakia</option>
+<option value="sl">Slovenia</option>
+<option value="so">Somalia</option>
+<option value="su">Sunda</option>
+<option value="sw">Swahili</option>
+<option value="sv">Swedia</option>
+<option value="ta">Tamil</option>
+<option value="te">Telugu</option>
+<option value="th">Thailand</option>
+<option value="tl">Tagalog</option>
+<option value="tr">Turki</option>
+<option value="uk">Ukraina</option>
+<option value="ur">Urdu</option>
+<option value="uz">Uzbek</option>
+<option value="vi">Vietnam</option>
+<option value="cy">Welsh</option>
+<option value="xh">Xhosa</option>
+<option value="yi">Yiddish</option>
+				</select>
+			  </div>
+			  <div class="flex flex-col">
+				<label for="to" class="w-1/4 text-left mr-4">Ke:</label>
+				<select id="to" class="w-full px-3 py-2 border border-gray-300 rounded focus:outline-none focus:ring-1 focus:ring-blue-500">
+<option value="af">Afrikaans</option>
+<option value="sq">Albania</option>
+<option value="am">Amharic</option>
+<option value="ar">Arab</option>
+<option value="ar-DZ">Arab (Algeria)</option>
+<option value="ar-BH">Arab (Bahrain)</option>
+<option value="ar-EG">Arab (Mesir)</option>
+<option value="ar-IQ">Arab (Irak)</option>
+<option value="ar-JO">Arab (Yordania)</option>
+<option value="ar-KW">Arab (Kuwait)</option>
+<option value="ar-LB">Arab (Lebanon)</option>
+<option value="ar-LY">Arab (Libya)</option>
+<option value="ar-MA">Arab (Maroko)</option>
+<option value="ar-OM">Arab (Oman)</option>
+<option value="ar-QA">Arab (Qatar)</option>
+<option value="ar-SA">Arab (Saudi Arabia)</option>
+<option value="ar-SY">Arab (Suriah)</option>
+<option value="ar-TN">Arab (Tunisia)</option>
+<option value="ar-AE">Arab (Uni Emirat Arab)</option>
+<option value="hy">Armenia</option>
+<option value="az">Azerbaijan</option>
+<option value="eu">Basque</option>
+<option value="bn">Bengali</option>
+<option value="bg">Bulgaria</option>
+<option value="ca">Catalan</option>
+<option value="ceb">Cebuano</option>
+<option value="zh-CN">Cina (Sederhana)</option>
+<option value="zh-HK">Cina (Hong Kong)</option>
+<option value="zh-MO">Cina (Makau)</option>
+<option value="zh-TW">Cina (Tradisional)</option>
+<option value="hr">Kroasia</option>
+<option value="cs">Ceko</option>
+<option value="da">Denmark</option>
+<option value="nl">Belanda</option>
+<option value="en">Inggris</option>
+<option value="en-AU">Inggris (Australia)</option>
+<option value="en-CA">Inggris (Kanada)</option>
+<option value="en-GB">Inggris (Inggris Raya)</option>
+<option value="en-IN">Inggris (India)</option>
+<option value="en-IE">Inggris (Irlandia)</option>
+<option value="en-NZ">Inggris (Selandia Baru)</option>
+<option value="en-PH">Inggris (Filipina)</option>
+<option value="en-SG">Inggris (Singapura)</option>
+<option value="en-ZA">Inggris (Afrika Selatan)</option>
+<option value="et">Estonia</option>
+<option value="fi">Finlandia</option>
+<option value="fr">Prancis</option>
+<option value="fr-CA">Prancis (Kanada)</option>
+<option value="gl">Galicia</option>
+<option value="ka">Georgia</option>
+<option value="de">Jerman</option>
+<option value="de-AT">Jerman (Austria)</option>
+<option value="de-CH">Jerman (Swiss)</option>
+<option value="el">Yunani</option>
+<option value="gu">Gujarati</option>
+<option value="ht">Haiti Creole</option>
+<option value="ha">Hausa</option>
+<option value="he">Ibrani</option>
+<option value="hi">Hindi</option>
+<option value="hu">Hungaria</option>
+<option value="is">Islandia</option>
+<option value="ig">Igbo</option>
+<option value="id">Indonesia</option>
+<option value="ga">Irlandia</option>
+<option value="it">Italia</option>
+<option value="it-CH">Italia (Swiss)</option>
+<option value="ja">Jepang</option>
+<option value="ja-JP">Jepang (Jepang)</option>
+<option value="kn">Kannada</option>
+<option value="kk">Kazakh</option>
+<option value="km">Khmer</option>
+<option value="ko">Korea</option>
+<option value="ko-KR">Korea (Korea Selatan)</option>
+<option value="es">Spanyol</option>
+<option value="ms">Melayu</option>
+<option value="pl">Polandia</option>
+<option value="pt">Portugis</option>
+<option value="pt-BR">Portugis (Brasil)</option>
+<option value="pt-PT">Portugis (Portugal)</option>
+<option value="ro">Rumania</option>
+<option value="ru">Rusia</option>
+<option value="sk">Slovakia</option>
+<option value="sl">Slovenia</option>
+<option value="so">Somalia</option>
+<option value="su">Sunda</option>
+<option value="sw">Swahili</option>
+<option value="sv">Swedia</option>
+<option value="ta">Tamil</option>
+<option value="te">Telugu</option>
+<option value="th">Thailand</option>
+<option value="tl">Tagalog</option>
+<option value="tr">Turki</option>
+<option value="uk">Ukraina</option>
+<option value="ur">Urdu</option>
+<option value="uz">Uzbek</option>
+<option value="vi">Vietnam</option>
+<option value="cy">Welsh</option>
+<option value="xh">Xhosa</option>
+<option value="yi">Yiddish</option>
+				</select>
+			  </div>
+		  </div>
+		<button type="submit" class="px-4 py-2 bg-blue-500 text-white font-bold rounded hover:bg-blue-700">Terjemahkan</button>
+	  </div>
+    </form>
+    <div id="result" class="mt-4 text-xl p-5 bg-white rounded border border-gray-300"></div>
+  </div>
+
+  <script>
+    const form = document.querySelector('form');
+
+    form.addEventListener('submit', (event) => {
+      event.preventDefault();
+
+      const text = document.querySelector('#text').value;
+      const from = document.querySelector('#from').value;
+      const to = document.querySelector('#to').value;
+
+      const url = `http://localhost:5000/translate?text=${text}&from=${from}&to=${to}`;
+
+      fetch(url)
+        .then(response => response.json())
+        .then(data => {
+          const result = document.querySelector('#result');
+          result.textContent = data.translation;
+        })
+        .catch(error => {
+          console.error('Error:', error);
+        });
+    });
+  </script>
+</body>
+</html>

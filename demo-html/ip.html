@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IP Information</title>
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+</head>
+<body class="bg-gray-100 p-4">
+
+    <div class="max-w-xl mx-auto bg-white rounded-lg shadow-lg p-4">
+        <h2 class="text-2xl font-bold mb-4">Information IP</h2>
+
+        <table id="ipTable" class="table-auto w-full">
+            <tr class="bg-gray-200">
+                <td class="border border-gray-600 p-2 font-bold">IP Address</td>
+                <td id="ipAddress" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-100">
+                <td class="border border-gray-600 p-2">City</td>
+                <td id="city" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-200">
+                <td class="border border-gray-600 p-2">Region</td>
+                <td id="region" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-100">
+                <td class="border border-gray-600 p-2">Country</td>
+                <td id="country" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-200">
+                <td class="border border-gray-600 p-2">Country Code</td>
+                <td id="countryCode" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-100">
+                <td class="border border-gray-600 p-2">Timezone</td>
+                <td id="timezone" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-200">
+                <td class="border border-gray-600 p-2">ISP</td>
+                <td id="isp" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-100">
+                <td class="border border-gray-600 p-2">Latitude</td>
+                <td id="latitude" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-200">
+                <td class="border border-gray-600 p-2">Longitude</td>
+                <td id="longitude" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-100">
+                <td class="border border-gray-600 p-2">Browser</td>
+                <td id="browser" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-200">
+                <td class="border border-gray-600 p-2">Connection Type</td>
+                <td id="connectionType" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-100">
+                <td class="border border-gray-600 p-2">OS</td>
+                <td id="os" class="border border-gray-600 p-2"></td>
+            </tr>
+            <tr class="bg-gray-200">
+                <td class="border border-gray-600 p-2">Resolution</td>
+                <td id="resolution" class="border border-gray-600 p-2"></td>
+            </tr>
+        </table>
+    </div>
+
+    <script>
+        async function getIPData() {
+            try {
+                const response = await fetch(`http://localhost:5000/ip`);
+                const data = await response.json();
+                if (!data.ip) {
+                    alert('No results found, try to be more specific.');
+                } else {
+                    document.getElementById('ipAddress').textContent = data.ip;
+                    document.getElementById('city').textContent = data.city;
+                    document.getElementById('region').textContent = data.region;
+                    document.getElementById('country').textContent = data.country;
+                    document.getElementById('countryCode').textContent = data.countryCode;
+                    document.getElementById('timezone').textContent = data.timezone;
+                    document.getElementById('isp').textContent = data.isp;
+                    document.getElementById('latitude').textContent = data.latitude;
+                    document.getElementById('longitude').textContent = data.longitude;
+                    document.getElementById('browser').textContent = data.browser;
+                    document.getElementById('connectionType').textContent = data.connectionType;
+                    document.getElementById('os').textContent = data.os;
+                    if (data.resolution && data.resolution.width && data.resolution.height) {
+                        document.getElementById('resolution').textContent = `${data.resolution.width} x ${data.resolution.height}`;
+                    } else {
+                        document.getElementById('resolution').textContent = 'N/A';
+                    }
+                }
+            } catch (error) {
+                console.error(error);
+                alert('An error occurred while fetching data.');
+            }
+        }
+
+        getIPData();
+    </script>
+</body>
+</html>
